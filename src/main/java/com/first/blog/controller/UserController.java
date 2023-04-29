@@ -1,6 +1,5 @@
 package com.first.blog.controller;
 
-import com.first.blog.dto.user.UserDTO;
 import com.first.blog.service.UserService;
 import com.first.blog.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +26,5 @@ public class UserController {
         return "index";
     }
 
-    @PostMapping("/login")
-    public String loginProc(UserDTO userDTO) {
-        User principal = userService.findByUsernameAndPassword(userDTO);
-        if (principal != null) {
-            return "index";
-
-        } else {
-            return "user/login";
-        }
-    }
 }
+
